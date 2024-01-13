@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Class to create the Navigation Bar and other list of items in navigation bar
+/// The `NavBar` class is a Flutter widget that represents a navigation drawer with various options such
+/// as contacting the app, reporting issues, viewing terms and conditions, and accessing the developer's
+/// LinkedIn profile.
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
   /// Function to Open Mail App From Current flutter app
+  /// The function `_sendEmail()` launches the default email client with a pre-filled email address.
   _sendEmail() async {
     final Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
