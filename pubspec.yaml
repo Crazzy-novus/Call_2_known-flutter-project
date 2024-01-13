@@ -45,12 +45,13 @@ dependencies:
   path_provider: ^2.0.14
   fluttertoast: ^8.0.8
   open_file: ^3.0.3
+  flutter_markdown: ^0.6.18+3
+  animations: ^2.0.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
-
 
 flutter_native_splash:
   color: "#FFFFFF"
@@ -69,7 +70,7 @@ flutter_native_splash:
     fullscreen: true
 
 
-  web: false
+  web: True
 
 
 
@@ -104,6 +105,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/linkedin.png
+    - assets/TERMS_AND_CONDITION/terms_conditions.md
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
