@@ -3,7 +3,9 @@
 
 ## Project Overview
 
-Call~Mingle is a comprehensive Flutter application designed to streamline the management of contacts and call logs. It provides a user-friendly interface that allows users to fetch and display contacts from their device, view call logs for each contact, make phone calls directly from the app, and edit and save contact information.
+Call~Mingle is a comprehensive Flutter application designed to streamline the management of contacts and call logs.
+It provides a user-friendly interface that allows users to fetch and display contacts from their device,
+view call logs for each contact, make phone calls directly from the app, and edit and save contact information.
 
 ## Table of Contents
 
