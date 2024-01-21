@@ -1,3 +1,4 @@
+/// The above code is a Dart program that creates a mobile application to manage contacts and call logs.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
@@ -17,6 +18,8 @@ import 'package:fluttertoast/fluttertoast.dart'
 import 'package:call_2_known/NavBar.dart';
 
 // List to store contacts Global variable
+/// The above code is declaring a list variable named "getContacts" of type "Contact". It is also
+/// declaring a nullable list variable named "_contacts" of type "SerializedContact".
 List<Contact> getContacts = [];
 List<SerializedContact>? _contacts;
 
@@ -29,6 +32,8 @@ void main() {
 
 /// Class to serialize a Contact
 
+/// The SerializedContact class is a Dart class that represents a contact with a name and a list of
+/// phone numbers, and it provides methods to convert the object to and from JSON format.
 class SerializedContact {
   String? name;
   String? phones;
@@ -37,6 +42,10 @@ class SerializedContact {
 
   /// Converts this object to a JSON string
 
+  /// The above code is defining a Dart class called SerializedContact. This class has a constructor
+  /// named fromJson that takes a Map<String, dynamic> as a parameter. The constructor assigns the value
+  /// of the 'name' key in the map to the name property of the class, and assigns the value of the
+  /// 'phones' key in the map to the phones property of the class.
   SerializedContact.fromJson(Map<String, dynamic> map)
       : name = map['name'],
         phones = map['phones'];
@@ -50,6 +59,16 @@ class SerializedContact {
 
 /// Function to serialize a List<Contact>
 
+/// The function `serializeContacts` takes a list of `Contact` objects, extracts the name and phone
+/// number from each contact, and returns a list of `SerializedContact` objects.
+/// 
+/// Args:
+///   contacts (List<Contact>): A list of Contact objects. Each Contact object represents a contact with
+/// a display name and a list of phone numbers.
+/// 
+/// Returns:
+///   The function `serializeContacts` returns a `Future` that resolves to a `List` of
+/// `SerializedContact` objects.
 Future<List<SerializedContact>> serializeContacts(
     List<Contact> contacts) async {
   List<SerializedContact> serializedContacts = [];
@@ -67,6 +86,12 @@ Future<List<SerializedContact>> serializeContacts(
 
 /// Function to get location to store contact file in memory
 
+/// The function `getExternalDocumentPath()` returns the path of the external document directory, after
+/// checking and requesting permission if necessary.
+/// 
+/// Returns:
+///   The method is returning a `Future<String>`, which means it will eventually return a `String`
+/// value. The `String` value being returned is the path to the external document directory.
 Future<String> getExternalDocumentPath() async {
   // To check whether permission is given for this app or not.
   var status = await Permission.storage.status;
@@ -110,7 +135,13 @@ Future<void> fetchContacts() async {
 }
 
 /// Function to save contacts to file
-
+/// The function `saveToFile` saves a list of serialized contacts to a JSON file in the device's
+/// downloads directory and displays a toast message upon successful file creation or an error message
+/// if there is an issue.
+/// 
+/// Args:
+///   contacts (List<SerializedContact>): A list of SerializedContact objects that need to be saved to a
+/// file.
 Future<void> saveToFile(List<SerializedContact> contacts) async {
   try {
     Directory? directory = await getDownloadsDirectory();
@@ -135,6 +166,8 @@ Future<void> saveToFile(List<SerializedContact> contacts) async {
 }
 
 /// Class to Home Page
+/// The `MyHomePage` class is a StatefulWidget that displays contact information and call statistics,
+/// allows the user to make phone calls, edit contacts, and reset contacts.
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -143,6 +176,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
   late String _name = '0000';
   late String _phoneNumber = '0000';
   late String _count = '0000';
@@ -155,6 +189,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// Function to get Contact details From Previously saved file else from Phone Contact
 
+  /// The function `getPhoneData` reads contact data from a JSON file and updates the `_contacts` list,
+  /// displaying a success message if the file is not empty, otherwise it fetches contacts using
+  /// FlutterContacts.
   void getPhoneData() async {
     try {
       Directory? directory = await getDownloadsDirectory();
@@ -202,6 +239,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// Function to generate random number to get random contact to call
 
+ /// The getRandomContact function returns a random index within the range of the total number of
+ /// contacts.
+ /// 
+ /// Returns:
+ ///   a random index from the list of contacts.
   int getRandomContact() {
     var random = Random();
     int totalContact = _contacts!.length;
@@ -262,6 +304,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   /// Function to make a phone call
+/// The function `_makePhoneCall` is used to make a phone call using the provided phone number.
+/// 
+/// Args:
+///   phoneNumber (String): The `phoneNumber` parameter is a string that represents the phone number
+/// that you want to call.
 
   void _makePhoneCall(String phoneNumber) async {
     final url = 'tel:$phoneNumber';
@@ -548,6 +595,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 /// Class to list all contacts details in list and make changes in list
+/// The `EditContactScreen` class is a stateful widget that allows users to edit a list of contacts,
+/// including the ability to remove contacts and save the changes to a file.
 class EditContactScreen extends StatefulWidget {
   const EditContactScreen({super.key});
 

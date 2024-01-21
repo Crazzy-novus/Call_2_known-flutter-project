@@ -1,12 +1,17 @@
+/// The `termsCondition` class is a Flutter widget that displays a dialog box containing the terms and
+/// conditions of an application, loaded from a Markdown file.
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
+/// The `termsCondition` class is a dialog widget that displays terms and conditions content and has a
+/// close button.
 class termsCondition extends StatelessWidget {
   termsCondition({super.key});
 
   @override
   Widget build(BuildContext context) {
+    /// The `Dialog` widget is creating a dialog box with rounded corners. It has a child
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Column(
@@ -27,6 +32,7 @@ class termsCondition extends StatelessWidget {
                   return Center(child: CircularProgressIndicator());
                 }),
           ),
+          /// The `TextButton` widget is creating a button with the label "CLOSE".
           TextButton(
               onPressed: () {
                 Navigator.pop(context);
