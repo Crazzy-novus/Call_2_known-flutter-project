@@ -50,7 +50,13 @@ The project relies on the following dependencies:
 - fluttertoast: A plugin for displaying toast messages.
 
 ## Screenshots
+![](E:\temporary files\Screenshot_2024-01-21-12-28-51-19_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
+
+![](E:\temporary files\Screenshot_2024-01-21-12-28-59-14_641ba5337afd60ac1f3badd2200a3ec5.jpg)
+
+![](E:\temporary files\Screenshot_2024-01-21-12-29-02-71_641ba5337afd60ac1f3badd2200a3ec5.jpg)
+![](E:\temporary files\Screenshot_2024-01-21-12-29-11-40_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
 ## Contributing
 
