@@ -1,4 +1,3 @@
-```markdown
 # Call~Mingle
 
 ## Project Overview
@@ -68,4 +67,4 @@ We welcome contributions from the community. If you'd like to contribute, please
 
 Please note that for major changes, you should open an issue first to discuss what you would like to change.
 
-```
+
