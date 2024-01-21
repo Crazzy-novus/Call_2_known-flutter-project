@@ -50,13 +50,13 @@ The project relies on the following dependencies:
 - fluttertoast: A plugin for displaying toast messages.
 
 ## Screenshots
-![](E:\temporary files\Screenshot_2024-01-21-12-28-51-19_641ba5337afd60ac1f3badd2200a3ec5.jpg)
+![Screen shot 1](assets/readmeimages/Screenshot_2024-01-21-12-28-51-19_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
+![Screen shot 2](assets/readmeimages/Screenshot_2024-01-21-12-28-59-14_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
-![](E:\temporary files\Screenshot_2024-01-21-12-28-59-14_641ba5337afd60ac1f3badd2200a3ec5.jpg)
+![Screen shot 3](assets/readmeimages/Screenshot_2024-01-21-12-29-02-71_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
-![](E:\temporary files\Screenshot_2024-01-21-12-29-02-71_641ba5337afd60ac1f3badd2200a3ec5.jpg)
-![](E:\temporary files\Screenshot_2024-01-21-12-29-11-40_641ba5337afd60ac1f3badd2200a3ec5.jpg)
+![Screen shot 4](assets/readmeimages/Screenshot_2024-01-21-12-29-11-40_641ba5337afd60ac1f3badd2200a3ec5.jpg)
 
 ## Contributing
 
@@ -69,9 +69,4 @@ We welcome contributions from the community. If you'd like to contribute, please
 
 Please note that for major changes, you should open an issue first to discuss what you would like to change.
 
-## License
-
-(Add your license information here to inform users about their rights and responsibilities when using your software.)
 ```
-
-Please replace the placeholders with the actual information about your project.
