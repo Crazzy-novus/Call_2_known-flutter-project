@@ -56,25 +56,6 @@ class NavBar extends StatelessWidget {
               );
             },
           ),
-          Ink(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () async {
-                const url = 'https://www.linkedin.com/in/duraivignesh-c/';
-                if (await launchUrl(Uri.parse(url))) {
-                  await launchUrl(Uri.parse(url));
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/linkedin.png'),
-                ),
-                title: Text('Linked In'),
-              ),
-            ),
-          ),
         ],
       ),
     );

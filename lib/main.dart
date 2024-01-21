@@ -329,7 +329,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _makePhoneCall(_phoneNumber);
+                        },
                         child: const Text('Make Call'),
                       ),
                       const SizedBox(width: 8),
@@ -354,13 +356,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 const SizedBox(width: 80),
-                                TextButton(
-                                    child: Text(_incoming,
-                                        style: const TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold)),
-                                    onPressed: () {}),
+                            Text(
+                                _incoming,
+                                style: const TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold
+                                ),
+                            ),
                                 Text('Incoming',
                                     style: const TextStyle(
                                         color: Colors.redAccent,
@@ -374,13 +377,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
-                                    child: Text(_duration,
-                                        style: const TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold)),
-                                    onPressed: () {}),
+                                Text(
+                                _duration,
+                                style: const TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold
+                                ),
+                                ),
                                 Text('Total Time ',
                                     style: const TextStyle(
                                         color: Colors.greenAccent,
@@ -394,13 +398,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
-                                    child: Text(_outgoing,
-                                        style: const TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold)),
-                                    onPressed: () {}),
+                                Text(
+                                  _outgoing,
+                                  style: const TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ),
                                 Text('OutGoing',
                                     style: const TextStyle(
                                         color: Colors.amberAccent,
@@ -414,13 +419,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
-                                    child: Text(_count,
-                                        style: const TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold)),
-                                    onPressed: () {}),
+                                Text(
+                                  _count,
+                                  style: const TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                ),
                                 Text('Total Calls',
                                     style: const TextStyle(
                                         color: Colors.teal,
@@ -435,19 +441,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Column(
                             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const SizedBox(height: 100),
-                              TextButton(
-                                  child: Text('HAVE A TIME',
-                                      style: const TextStyle(
-                                          color: Colors.red,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold)),
-                                  onPressed: () {}),
-                              Text('TRY TO TALK',
-                                  style: const TextStyle(
-                                      color: Colors.purple,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold)),
+                                const SizedBox(height: 100),
+                                TextButton(
+                                    child: Text('HAVE A TIME',
+                                        style: const TextStyle(
+                                            color: Colors.red,
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
+                                    onPressed: () {}),
+                                Text('TRY TO TALK',
+                                    style: const TextStyle(
+                                        color: Colors.purple,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold)),
                             ],
                           )),
                         ),
@@ -458,58 +464,58 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 50),
             Center(
                 child: Row(
-              children: [
-                const SizedBox(width: 25.0),
-                TextButton(
-                  onPressed: () {
-                    int index = getRandomContact();
-                    _makePhoneCall(_contacts![index].phones!);
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    // Background color of the button
-                    padding: const EdgeInsets.all(16),
-                    // Padding around the button content
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(8.0), // Rounded corners
+                children: [
+                  const SizedBox(width: 25.0),
+                  TextButton(
+                    onPressed: () {
+                      int index = getRandomContact();
+                      _makePhoneCall(_contacts![index].phones!);
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      // Background color of the button
+                      padding: const EdgeInsets.all(16),
+                      // Padding around the button content
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(8.0), // Rounded corners
+                      ),
+                    ),
+                    child: const Text(
+                      "Pick Contact",
+                      style: TextStyle(
+                        color: Colors.yellow, // Text color of the button
+                        fontSize: 18, // Font size of the text
+                      ),
                     ),
                   ),
-                  child: const Text(
-                    "Pick Contact",
-                    style: TextStyle(
-                      color: Colors.yellow, // Text color of the button
-                      fontSize: 18, // Font size of the text
+                  const SizedBox(width: 50.0),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EditContactScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      // Background color of the button
+                      padding: const EdgeInsets.all(16),
+                      // Padding around the button content
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(8.0), // Rounded corners
+                      ),
+                    ),
+                    child: const Text(
+                      "Edit Contact",
+                      style: TextStyle(
+                        color: Colors.greenAccent, // Text color of the button
+                        fontSize: 18, // Font size of the text
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 50.0),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EditContactScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    // Background color of the button
-                    padding: const EdgeInsets.all(16),
-                    // Padding around the button content
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(8.0), // Rounded corners
-                    ),
-                  ),
-                  child: const Text(
-                    "Edit Contact",
-                    style: TextStyle(
-                      color: Colors.greenAccent, // Text color of the button
-                      fontSize: 18, // Font size of the text
-                    ),
-                  ),
-                ),
               ],
             )),
             const SizedBox(height: 75),
